@@ -118,19 +118,15 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
     }
 
 
-    fun showPost() {
-        Log.d("tag","postclicked")
-//        var retrofit = RetrofitClient.initClient()
-//        var getCommunityPost = retrofit.create(RetrofitClient.GetSpecificPostApi::class.java)
-//        getCommunityPost.getPost(1).enqueue(object : retrofit2.Callback<ClickedPostData> {
-//            override fun onFailure(call: Call<ClickedPostData>, t: Throwable) {
-//                Log.d("tag","!")
-//                Log.d("tag",t.toString())
-//            }
-//            override fun onResponse(call: Call<ClickedPostData>, response: Response<ClickedPostData>) {
-//                Log.d("tag","${response.body()}")
-//            }
-//        })
+    fun showPost(posting_index : Int, posting : String,name : String,nickname : String,title : String,date : String) {
+        var intent = Intent(this,PostActivity::class.java)
+        intent.putExtra("posting_index", posting_index.toString())
+        intent.putExtra("name",name)
+        intent.putExtra("posting",posting)
+        intent.putExtra("nickname",nickname)
+        intent.putExtra("title",title)
+        intent.putExtra("date",date)
+        startActivity(intent)
     }
 
     fun showAskPost(postition : Int) {

@@ -52,7 +52,6 @@ class AskShowAllPostFragment : Fragment() {
     private fun renderUi(start_index : Int) {
         var retrofit = RetrofitClient.initClient()
         var data = board_req_format(start_index,6)
-
         //조수민 수정 : 만약 parameter 가 0 즉 전체 질문 보기라면
         if (parameter == "0") {
             var sendData = retrofit.create(RetrofitClient.AskApi::class.java)
@@ -62,9 +61,7 @@ class AskShowAllPostFragment : Fragment() {
                 }
                 override fun onResponse(call: Call<PostData>, response: Response<PostData>) {
                     var postingList = response.body()!!.posting_list
-                    Log.d("vassfsadf",response.body()!!.posting_list.toString())
                     // 조수민 수정 : 게시물이 6개 미만이면 오류가 뜨기 때문에 try 써야됨
-
                     try {
                         setData = setData(parameter,dataCount, postingList)
                     }
@@ -92,7 +89,6 @@ class AskShowAllPostFragment : Fragment() {
                         recyclerView.layoutManager = LinearLayoutManager(context)
                         var space = LinearSpacingItemDecoration(20)
                         recyclerView.addItemDecoration(space)
-
 //                    }
 //                    catch (e:IndexOutOfBoundsException){
 //

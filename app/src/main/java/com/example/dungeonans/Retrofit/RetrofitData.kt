@@ -60,6 +60,7 @@ data class GetCommunityPostByTag(
 )
 
 data class send_post_cnt(
+    var start_index: Int,
     var post_cnt : Int
 )
 
