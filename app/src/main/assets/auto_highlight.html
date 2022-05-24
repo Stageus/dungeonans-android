@@ -451,6 +451,12 @@
 
             }
 
+        function getcontent(){
+            var transe = document.getElementById("editing-code");
+            var my = transe.value;
+            Android2.showToast(my);
+        }
+
         function changeItalicStyle() {
             var count = 0;
             var sel = window.getSelection();
@@ -606,7 +612,7 @@
             id="editing-code"
             placeholder="소스코드 입력"
             spellcheck="false"
-            style="overflow-y: scroll; border: none; margin-top: -3px; min-height:400px; max-height: 400px; width:400px; top: 10px; resize: none; margin : 0; outline: none; "
+            style="overflow-y: scroll; border: none; margin-top: -3px; min-height:200px; max-height: 200px; width:400px; top: 10px; resize: none; margin : 0; outline: none; "
             onclick="resize();  "
             oninput="resize();"></textarea>
 

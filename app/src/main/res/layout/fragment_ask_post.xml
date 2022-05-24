@@ -77,129 +77,276 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-        <HorizontalScrollView
-            android:id="@+id/horizontalScrollView"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/whatlanguage"
             android:layout_width="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/titleandweb"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="#F2F2F2"
-            android:scrollbars="none"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/top_constraint">
 
-            <LinearLayout
+
+            <HorizontalScrollView
+                android:id="@+id/hashtagHorizontalScrollView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:background="@color/lightGrey"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        </HorizontalScrollView>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/pythontag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/kotlintag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/androidtag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/htmltag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/csstag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/jstag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/javatag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/cpptag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/sqltag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/rtag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/phptag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/swifttag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/csharptag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/gotag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/scalatag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/darttag"
+                        android:button="@null" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bashtag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+
+                    <RadioButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/djangotag"
+                        android:button="@null"
+                        android:elevation="20dp" />
+                </RadioGroup>
+            </HorizontalScrollView>
 
 
-        <ScrollView
-            android:id="@+id/postEditScrollView"
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+<!--        <HorizontalScrollView-->
+<!--            android:id="@+id/horizontalScrollView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="#F2F2F2"-->
+<!--            android:scrollbars="none"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintHorizontal_weight="1"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/top_constraint">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="horizontal">-->
+<!--            </LinearLayout>-->
+
+<!--        </HorizontalScrollView>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/titleandweb"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+            app:layout_constraintTop_toBottomOf="@+id/whatlanguage">
 
-            <LinearLayout
-                android:id="@+id/body_box"
+            <ScrollView
+                android:id="@+id/postEditScrollView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_margin="10dp">
-
-                <EditText
-                    android:id="@+id/title_edittext"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="25sp"
-                    android:background="@color/transparent"
-                    android:hint="제목">
-                </EditText>
-
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="1dp"
-                    android:background="@color/grey"
-                    android:layout_marginBottom="15dp"/>
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                >
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_height="wrap_content">
+                    android:id="@+id/body_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/title_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:hint="제목"
+                        android:textSize="25sp"></EditText>
 
                     <View
-                        android:layout_width="1dp"
-                        android:layout_height="1dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@color/grey" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="1dp" />
+                    </LinearLayout>
+
+                    <com.mypackage.common.custom.android.widgets.CustomWebview
+                        android:id="@+id/body_webview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></com.mypackage.common.custom.android.widgets.CustomWebview>
+
+
                 </LinearLayout>
+            </ScrollView>
 
-                <com.mypackage.common.custom.android.widgets.CustomWebview
-                    android:id="@+id/body_webview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                </com.mypackage.common.custom.android.widgets.CustomWebview>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
 
-            </LinearLayout>
-        </ScrollView>
 
 
-        <!--        <LinearLayout-->
-        <!--            android:id="@+id/linearLayout2"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="50dp"-->
-        <!--            android:background="#F2F2F2"-->
-        <!--            android:orientation="horizontal"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--            app:layout_constraintRight_toRightOf="parent">-->
-
-        <!--            <ImageView-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center"-->
-        <!--                android:layout_marginLeft="10dp"-->
-        <!--                android:src="@drawable/image_icon"></ImageView>-->
-
-        <!--            <ImageView-->
-        <!--                android:id="@+id/codeblock"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center"-->
-        <!--                android:layout_marginLeft="20dp"-->
-        <!--                android:src="@drawable/codeblock"></ImageView>-->
-
-        <!--            <ImageView-->
-        <!--                android:id="@+id/bold"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center"-->
-        <!--                android:layout_marginLeft="20dp"-->
-        <!--                android:src="@drawable/codeblock"></ImageView>-->
-
-        <!--            <ImageView-->
-        <!--                android:id="@+id/italic"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center"-->
-        <!--                android:layout_marginLeft="20dp"-->
-        <!--                android:src="@drawable/codeblock"></ImageView>-->
-
-
-
-        <!--        </LinearLayout>-->
-
-=======
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/askButton"
@@ -211,7 +358,24 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             />
->>>>>>> cf225b936882580805417e9e0a722edacf27913e
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageButton
+
+                android:id="@+id/mybutton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/pythontag">
+            </ImageButton>
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

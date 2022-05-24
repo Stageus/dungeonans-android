@@ -101,6 +101,7 @@ class AskPostActivity : AppCompatActivity() {
         body_webview.settings.allowContentAccess = true
         body_webview.settings.allowFileAccess = true
         var linear = findViewById<WebView>(R.id.body_webview)
+        var mybutton = findViewById<ImageButton>(R.id.mybutton)
 
         var weburl = "file:///android_asset/auto_highlight.html"
 
@@ -206,6 +207,10 @@ class AskPostActivity : AppCompatActivity() {
 
                 }
             }
+        }
+
+        mybutton.setOnClickListener(){
+            body_webview.loadUrl("javascript:getcontent()")
         }
 
         fun createImageFile(): File? {
