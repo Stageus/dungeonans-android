@@ -154,6 +154,7 @@ class LoginActivity : AppCompatActivity() {
         val requestLoginApi = retrofit.create(RetrofitClient.LoginApi::class.java)
         requestLoginApi.postLogin(loginInfo).enqueue(object : Callback<LoginResponse> {
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+
             }
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     if (response.body()?.success == true) {
@@ -163,13 +164,17 @@ class LoginActivity : AppCompatActivity() {
                     }
                     PrefManager.storeUserToken(response.body()!!.token)
                     startActivity(loginIntent)
-                }
+                    }
+                    else {
+                        Log.d("TAG","errmsg : ${response.body()!!.errmsg}")
+                        Toast.makeText(this@LoginActivity, "잘못된 아이디 혹은 비밀번호 입니다.",Toast.LENGTH_SHORT).show()
+                    }
             }
         })
     }
 
     // 네이버 로그아웃
-    private fun startNaverLogout(){
+    private fun startNaverLogout() {
         NaverIdLoginSDK.logout()
         Toast.makeText(this@LoginActivity, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
     }

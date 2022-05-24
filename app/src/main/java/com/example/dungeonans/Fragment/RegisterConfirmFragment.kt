@@ -13,9 +13,17 @@ import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.dungeonans.Activity.RegisterActivity
+import com.example.dungeonans.DataClass.LoginResponse
+import com.example.dungeonans.DataClass.NoneData
+import com.example.dungeonans.DataClass.RegisterData
 import com.example.dungeonans.R
+import com.example.dungeonans.Retrofit.RetrofitClient
 import com.example.dungeonans.Utils.PreferenceUtil
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.fragment_register_confirm.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.regex.Pattern
 
 class RegisterConfirmFragment : Fragment() {
@@ -30,6 +38,13 @@ class RegisterConfirmFragment : Fragment() {
     private var isPwAcceptable = false // 비밀번호 예외처리 여부
     private var isRePwAcceptable = false // 비밀번호 재입력 예외처리 여부
     private var isEmailAcceptable = false // 이메일 예외처리 여부
+
+    // EditText
+    lateinit var nameET : EditText
+    lateinit var idET : EditText
+    lateinit var pwET : EditText
+    lateinit var rePwET : EditText
+    lateinit var emailET : EditText
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -50,12 +65,12 @@ class RegisterConfirmFragment : Fragment() {
         val overlapCheckBtn = view.findViewById<Button>(R.id.idOverlapCheckBtn)
 
         // EditText
-        val nameET = view.findViewById<EditText>(R.id.nameET)
-        val idET = view.findViewById<EditText>(R.id.idET)
-        val pwET = view.findViewById<EditText>(R.id.pwET)
-        val rePwET = view.findViewById<EditText>(R.id.rePwET)
-        val emailET = view.findViewById<EditText>(R.id.emailET)
-        val editTextList = arrayListOf<EditText>(nameET, idET, pwET, rePwET, emailET)
+        nameET = view.findViewById(R.id.nameET)
+        idET = view.findViewById(R.id.idET)
+        pwET = view.findViewById(R.id.pwET)
+        rePwET = view.findViewById(R.id.rePwET)
+        emailET = view.findViewById(R.id.emailET)
+        val editTextList = arrayListOf(nameET, idET, pwET, rePwET, emailET)
 
         // domain Spinner
         val domainList = resources.getStringArray(R.array.domain_array)
@@ -219,8 +234,29 @@ class RegisterConfirmFragment : Fragment() {
         else if (!isEmailAcceptable) registerActivity.showToastEvent("이메일을 확인해주세요.", true)
         else {
             preferenceUtil.deletePreference(arrayListOf("registerName","registerId","registerPw","registerEmail"))
+            connectRegisterApi()
             registerActivity.transFragEvent(2)
         }
+    }
+
+    private fun connectRegisterApi() {
+        val registerData = RegisterData(
+            id = idET.text.toString(),
+            pw = pwET.text.toString(),
+            name = nameET.text.toString(),
+            nickname = nickNameET.text.toString(),
+            email = emailET.text.toString()
+        )
+        val retrofit = RetrofitClient.initClient()
+        val requestRegisterApi = retrofit.create(RetrofitClient.LoginApi::class.java)
+        requestRegisterApi.postAccount(registerData = registerData).enqueue(object : Callback<NoneData> {
+            override fun onResponse(call: Call<NoneData>, response: Response<NoneData>) {
+                Log.d("TAG", "register success : ${response.body()!!.success}")
+            }
+
+            override fun onFailure(call: Call<NoneData>, t: Throwable) {
+            }
+        })
     }
 
 

@@ -60,6 +60,7 @@ data class GetCommunityPostByTag(
 )
 
 data class send_post_cnt(
+    var start_index: Int,
     var post_cnt : Int
 )
 
@@ -169,6 +170,14 @@ data class put_comment_req(
 data class LoginData(
     val id: String,
     val pw : String
+)
+/** 계정생성 Request **/
+data class RegisterData(
+    val id : String,
+    val pw : String,
+    val name : String,
+    val nickname : String,
+    val email : String
 )
 
 data class LoginResponse(

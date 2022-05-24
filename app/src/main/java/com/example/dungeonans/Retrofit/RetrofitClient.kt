@@ -105,20 +105,15 @@ object RetrofitClient {
         client.writeTimeout(10, TimeUnit.SECONDS)
         client.retryOnConnectionFailure(true)
 
-
         if(retrofitClient == null){
-
             // 레트로핏 빌더를 통해 인스턴스 생성
             retrofitClient = Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
-
                 // 위에서 설정한 클라이언트로 레트로핏 클라이언트를 설정한다.
                 .client(client.build())
-
                 .build()
         }
-
         return retrofitClient
     }
 
@@ -126,7 +121,6 @@ object RetrofitClient {
         val url = BuildConfig.SERVER_URL //서버 주소
         val gson = Gson()                   // 서버와 주고 받을 데이터 형식
         val clientBuilder = OkHttpClient.Builder().build()
-
         val connection = Retrofit.Builder()
             .baseUrl(url)
             .client(clientBuilder)
@@ -138,10 +132,10 @@ object RetrofitClient {
     /** Community Api (worked by KYJ) **/
     interface CommunityApi{
         @GET("/board/community")
-        fun getCommunityPost(@Query("board_req_format") board_req_format: board_req_format) : Call<PostData>
+        fun getCommunityPost(@Header("start_index") start_index : Int, @Header("post_cnt") post_cnt : Int) : Call<PostData>
 
         @GET("/board/hot")
-        fun getCommunityHotPost(@Query("send_post_cnt") post_cnt : send_post_cnt) : Call<PostData>
+        fun getCommunityHotPost(@Header("start_index") start_index : Int, @Header("post_cnt") post_cnt : Int) : Call<PostData>
     }
     /** QnA Api (worked by KYJ) **/
     interface AskApi{
@@ -201,6 +195,16 @@ object RetrofitClient {
         fun postLogin(
             @Body loginData : LoginData
         ) :Call<LoginResponse>
+
+        @GET("/logout")
+        fun getLogout(
+            @Header("auth") token: String
+        ) :Call<LoginResponse>
+
+        @POST("/account")
+        fun postAccount(
+            @Body registerData : RegisterData
+        ) :Call<NoneData>
     }
 
     /** Search Api (worked by KJY) **/
