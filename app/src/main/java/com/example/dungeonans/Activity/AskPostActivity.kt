@@ -63,6 +63,8 @@ import android.content.CursorLoader
 
 import android.provider.DocumentsContract
 import android.R.attr.data
+import android.R.attr.visibility
+import android.opengl.Visibility
 
 import android.os.Build
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -90,6 +92,7 @@ class AskPostActivity : AppCompatActivity() {
     var cameraPath = ""
     var mWebViewImageUpload: ValueCallback<Array<Uri>>? = null
     var width: Float = 0.0f
+    var islanBtnClicked = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -100,8 +103,26 @@ class AskPostActivity : AppCompatActivity() {
         body_webview.settings.domStorageEnabled = true
         body_webview.settings.allowContentAccess = true
         body_webview.settings.allowFileAccess = true
+        var hiddenlinear = findViewById<LinearLayout>(R.id.hiddenlinear)
         var linear = findViewById<WebView>(R.id.body_webview)
-        var mybutton = findViewById<ImageButton>(R.id.mybutton)
+        var imageButton = findViewById<ImageButton>(R.id.mybutton_image)
+        var chartButton = findViewById<ImageButton>(R.id.mybutton_chart)
+        var lanButton = findViewById<ImageButton>(R.id.mybutton_lan)
+        var CodeButton = findViewById<ImageButton>(R.id.mybutton_code)
+
+        lanButton.setOnClickListener(){
+            if (islanBtnClicked == 0){
+                lanButton.setBackgroundResource(R.drawable.aboutlan_clicked_icon)
+                hiddenlinear.visibility= View.VISIBLE
+                islanBtnClicked = 1
+            }
+            else if (islanBtnClicked == 1){
+                lanButton.setBackgroundResource(R.drawable.aboutlan_icon)
+                hiddenlinear.visibility= View.INVISIBLE
+                islanBtnClicked = 0
+            }
+        }
+
 
         var weburl = "file:///android_asset/auto_highlight.html"
 
@@ -209,9 +230,6 @@ class AskPostActivity : AppCompatActivity() {
             }
         }
 
-        mybutton.setOnClickListener(){
-            body_webview.loadUrl("javascript:getcontent()")
-        }
 
         fun createImageFile(): File? {
             val timeStap = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())

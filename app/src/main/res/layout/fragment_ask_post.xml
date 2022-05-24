@@ -343,37 +343,134 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+        <LinearLayout
+            android:id="@+id/hiddenlinear"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:visibility="invisible"
+            android:background="#E8E8E8"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageButton
+                android:id="@+id/lanbutton_h1"
+                android:layout_width="12dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/h1_icon"/>
+
+            <ImageButton
+                android:id="@+id/lanbutton_fontweight"
+                android:layout_width="12dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/fontweight_icon"/>
+
+            <ImageButton
+                android:id="@+id/lanbutton_bold"
+                android:layout_width="12dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/bold_cion"/>
+
+            <ImageButton
+                android:id="@+id/lanbutton_nott"
+                android:layout_width="12dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/nott_icon"/>
+
+            <ImageButton
+                android:id="@+id/lanbutton_u"
+                android:layout_width="12dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/u_icon"/>
+
+            <ImageButton
+                android:id="@+id/lanbutton_sentence"
+                android:layout_width="12dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/sentence_icon"/>
+
+            <ImageButton
+                android:id="@+id/lanbutton_senorder"
+                android:layout_width="12dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/sentence_order_icon"/>
+
+            <ImageButton
+                android:id="@+id/lanbutton_A"
+                android:layout_width="12dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/a_icon"/>
+
+            <ImageButton
+                android:id="@+id/lanbutton_hyper"
+                android:layout_width="12dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/hiperlink_icon"/>
 
 
 
+        </LinearLayout>
 
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/askButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/edit_icon"
-            android:backgroundTint="@color/lightGrey"
-            android:layout_margin="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            />
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@color/gray"
+
+            android:layout_height="41dp"
+            android:background="#F2F2F2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageButton
+                android:id="@+id/mybutton_image"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/insertimage_icon"></ImageButton>
 
-                android:id="@+id/mybutton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/pythontag">
-            </ImageButton>
+            <ImageButton
+                android:id="@+id/mybutton_chart"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/chart_icon"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/mybutton_lan"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/aboutlan_icon"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/mybutton_code"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/codeblock_icon"></ImageButton>
 
         </LinearLayout>
 

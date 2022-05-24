@@ -501,7 +501,7 @@
         function myupdate2() {
             var mywidth = Android2.getmywidth();
             var px = Android2.getwidth(mywidth);
-            var mypx = px - 7;
+            var mypx = px - 15;
             var mypx_codeblcok = px - 50;
             var transe = document.getElementById("editing-code");
             var code_block = document.getElementById("count1")
@@ -512,96 +512,96 @@
 
     </script>
 
-<body style="margin: 0;">
-<div style="border: 1px solid gray; border-radius: 3px; width: fit-content; height: fit-content;" >
+<!--<body style="margin: 0;">-->
+<!--<div style="border: 1px solid gray; border-radius: 3px; width: fit-content; height: fit-content;" >-->
 
-    <div id="wmd-button-bar" class="wmd-button-bar btr-sm mt0">
-        <ul id="wmd-button-row" class="wmd-button-row">
-            <li class="wmd-button" id="wmd-bold-button" title="Strong <strong> Ctrl+B">
-                <span id = "setbold" onmouseenter="preventEvent(this)" onclick = "changeBoldStyle()" style="background-position: 0px 0px;"></span>
-            </li>
+<!--    <div id="wmd-button-bar" class="wmd-button-bar btr-sm mt0">-->
+<!--        <ul id="wmd-button-row" class="wmd-button-row">-->
+<!--            <li class="wmd-button" id="wmd-bold-button" title="Strong <strong> Ctrl+B">-->
+<!--                <span id = "setbold" onmouseenter="preventEvent(this)" onclick = "changeBoldStyle()" style="background-position: 0px 0px;"></span>-->
+<!--            </li>-->
 
-            <li class="wmd-button" id="wmd-italic-button" title="Emphasis <em> Ctrl+I">
-                <span id = "setitalic" onmouseenter="preventEvent(this)" onclick = "changeItalicStyle()" style="background-position: -20px 0px;"></span>
-            </li>
+<!--            <li class="wmd-button" id="wmd-italic-button" title="Emphasis <em> Ctrl+I">-->
+<!--                <span id = "setitalic" onmouseenter="preventEvent(this)" onclick = "changeItalicStyle()" style="background-position: -20px 0px;"></span>-->
+<!--            </li>-->
 
-            <li class="wmd-spacer">
-            </li>
-
-
-
-            <li class="wmd-button" id="wmd-code-button" title="Code Sample <pre><code> Ctrl+K">
-                <span id = "code" onclick="insertAtCursor(document.getElementById('editing-code'), '\n‛코드를 입력해 주세요!‛')" style="background-position: -80px 0px;"></span>
-            </li>
-
-            <li class="wmd-button" id="wmd-image-button" title="Image <img> Ctrl+G">
-                <span id = "image" style="background-position: -100px 0px;" onclick="loadImage()"></span>
-            </li>
-
-            <!-- <li class="wmd-button wmd-snippet-button" id="wmd-snippet-button" title="JavaScript/HTML/CSS snippet Ctrl-M">
-                <span></span>
-            </li> -->
-
-            <li class="wmd-button" id="wmd-quote-button" title="Blockquote <blockquote> Ctrl+Q">
-                <span id = "preView" onclick="setOpacity()" style="background-position: -260px center;"></span>
-            </li>
-
-            <li class="wmd-spacer wmd-spacer2" id="wmd-spacer2">
-            </li>
+<!--            <li class="wmd-spacer">-->
+<!--            </li>-->
 
 
 
-            <li class="wmd-button" id="wmd-olist-button" title="Numbered List <ol> Ctrl+O">
-                <span style="background-position: -120px 0px;"></span>
-            </li>
+<!--            <li class="wmd-button" id="wmd-code-button" title="Code Sample <pre><code> Ctrl+K">-->
+<!--                <span id = "code" onclick="insertAtCursor(document.getElementById('editing-code'), '\n‛코드를 입력해 주세요!‛')" style="background-position: -80px 0px;"></span>-->
+<!--            </li>-->
 
-            <li class="wmd-button" id="wmd-ulist-button" title="Bulleted List <ul> Ctrl+U">
-                <span style="background-position: -140px 0px;"></span>
-            </li>
+<!--            <li class="wmd-button" id="wmd-image-button" title="Image <img> Ctrl+G">-->
+<!--                <span id = "image" style="background-position: -100px 0px;" onclick="loadImage()"></span>-->
+<!--            </li>-->
 
-            <li class="wmd-button" id="wmd-heading-button" title="Heading <h1>/<h2> Ctrl+H">
-                <span style="background-position: -160px 0px;"></span>
-            </li>
+<!--            &lt;!&ndash; <li class="wmd-button wmd-snippet-button" id="wmd-snippet-button" title="JavaScript/HTML/CSS snippet Ctrl-M">-->
+<!--                <span></span>-->
+<!--            </li> &ndash;&gt;-->
 
-            <li class="wmd-button" id="wmd-hr-button" title="Horizontal Rule <hr> Ctrl+R">
-                <span style="background-position: -180px 0px;"></span>
-            </li>
+<!--            <li class="wmd-button" id="wmd-quote-button" title="Blockquote <blockquote> Ctrl+Q">-->
+<!--                <span id = "preView" onclick="setOpacity()" style="background-position: -260px center;"></span>-->
+<!--            </li>-->
 
-            <li class="wmd-spacer wmd-spacer3" id="wmd-spacer3"></li>
-            <li class="wmd-button" id="wmd-undo-button" >
-                <span id = "undobutton" onclick="doUndo()" style="background-position: -200px 0px;"></span>
-            </li>
-
-            <li class="wmd-button" id="wmd-redo-button" >
-                <span id = "redobutton" onclick = "doRedo()" style="background-position: -220px -20px;"></span>
-            </li>
-
-            <li class="wmd-spacer wmd-spacer-max"></li>
-            <li class="s-btn s-btn__muted s-btn__sm as-center" id="wmd-help-button" title="Markdown Editing Help" style="right: 0px;"></li>
-
-        </ul>
-
-        <!-- <div style="border-bottom: 1px solid gray ;height:fit-content ;">
-            <input src="bold.png" type="button" style="height: 30px; margin-top: 5px; margin-left: 5px;" onclick="insertAtCursor(document.getElementById('editing-code'), '\n‛코드를 입력해 주세요!‛'); update_mycode()">
-            <input id = ".click-me" type="button" onclick = "changeBoldStyle()" style="height: 30px; margin-top: 5px; margin-left: 5px;">
-            <input type="button" style="height: 30px; margin-top: 5px; margin-left: 5px;" onclick="opaCiTyNone()">
-            <input type="button" style="height: 30px; margin-top: 5px; margin-left: 5px;" onclick="changeItalicStyle()">
-
-    </div> -->
+<!--            <li class="wmd-spacer wmd-spacer2" id="wmd-spacer2">-->
+<!--            </li>-->
 
 
-    </div>
-    <div id="mdhelp" class="mdhelp bg-black-025  bl br bc-black-200" style="">
-        <ul id="mdhelp-tabs" class="mdhelp-tabs bg-black-025 d-flex overflow-x-auto overflow-y-hidden">
-            <li onclick="setAnimation_Bold_Italic()">글시체</li>
-            <li onclick="setAnimation_Other(document.getElementById('code'))" >코드</li>
-            <li onclick="setAnimation_Other(document.getElementById('image'))" >이미지</li>
-            <li onclick="setAnimation_Other(document.getElementById('preView'))" >미리보기</li>
-            <li onclick="setAnimation_Other(document.getElementById('undobutton'))" >전 작업</li>
-            <li onclick="setAnimation_Other(document.getElementById('redobutton'))" >앞 작업</li>
-        </ul>
 
-    </div>
+<!--            <li class="wmd-button" id="wmd-olist-button" title="Numbered List <ol> Ctrl+O">-->
+<!--                <span style="background-position: -120px 0px;"></span>-->
+<!--            </li>-->
+
+<!--            <li class="wmd-button" id="wmd-ulist-button" title="Bulleted List <ul> Ctrl+U">-->
+<!--                <span style="background-position: -140px 0px;"></span>-->
+<!--            </li>-->
+
+<!--            <li class="wmd-button" id="wmd-heading-button" title="Heading <h1>/<h2> Ctrl+H">-->
+<!--                <span style="background-position: -160px 0px;"></span>-->
+<!--            </li>-->
+
+<!--            <li class="wmd-button" id="wmd-hr-button" title="Horizontal Rule <hr> Ctrl+R">-->
+<!--                <span style="background-position: -180px 0px;"></span>-->
+<!--            </li>-->
+
+<!--            <li class="wmd-spacer wmd-spacer3" id="wmd-spacer3"></li>-->
+<!--            <li class="wmd-button" id="wmd-undo-button" >-->
+<!--                <span id = "undobutton" onclick="doUndo()" style="background-position: -200px 0px;"></span>-->
+<!--            </li>-->
+
+<!--            <li class="wmd-button" id="wmd-redo-button" >-->
+<!--                <span id = "redobutton" onclick = "doRedo()" style="background-position: -220px -20px;"></span>-->
+<!--            </li>-->
+
+<!--            <li class="wmd-spacer wmd-spacer-max"></li>-->
+<!--            <li class="s-btn s-btn__muted s-btn__sm as-center" id="wmd-help-button" title="Markdown Editing Help" style="right: 0px;"></li>-->
+
+<!--        </ul>-->
+
+<!--        &lt;!&ndash; <div style="border-bottom: 1px solid gray ;height:fit-content ;">-->
+<!--            <input src="bold.png" type="button" style="height: 30px; margin-top: 5px; margin-left: 5px;" onclick="insertAtCursor(document.getElementById('editing-code'), '\n‛코드를 입력해 주세요!‛'); update_mycode()">-->
+<!--            <input id = ".click-me" type="button" onclick = "changeBoldStyle()" style="height: 30px; margin-top: 5px; margin-left: 5px;">-->
+<!--            <input type="button" style="height: 30px; margin-top: 5px; margin-left: 5px;" onclick="opaCiTyNone()">-->
+<!--            <input type="button" style="height: 30px; margin-top: 5px; margin-left: 5px;" onclick="changeItalicStyle()">-->
+
+<!--    </div> &ndash;&gt;-->
+
+
+<!--    </div>-->
+<!--    <div id="mdhelp" class="mdhelp bg-black-025  bl br bc-black-200" style="">-->
+<!--        <ul id="mdhelp-tabs" class="mdhelp-tabs bg-black-025 d-flex overflow-x-auto overflow-y-hidden">-->
+<!--            <li onclick="setAnimation_Bold_Italic()">글시체</li>-->
+<!--            <li onclick="setAnimation_Other(document.getElementById('code'))" >코드</li>-->
+<!--            <li onclick="setAnimation_Other(document.getElementById('image'))" >이미지</li>-->
+<!--            <li onclick="setAnimation_Other(document.getElementById('preView'))" >미리보기</li>-->
+<!--            <li onclick="setAnimation_Other(document.getElementById('undobutton'))" >전 작업</li>-->
+<!--            <li onclick="setAnimation_Other(document.getElementById('redobutton'))" >앞 작업</li>-->
+<!--        </ul>-->
+
+<!--    </div>-->
 
     <form enctype=“multipart/form-data”>
         <input id = "loadfile" type="file" style="display: none;" value="파일첨부" accept="image/*"/>
@@ -621,10 +621,6 @@
 
 <pre class = "hljs" style="overflow-y: scroll; position: absolute; display: none; left: 1px; top: 70.5px; margin: 0; word-break: break-all; white-space: pre-wrap; height:390px; width:388px; background-color: white; color: black" id = "count1">
     </pre>
-
-<button onclick="uploadPost()" style="font-size: 10px; margin-top:30px; margin-bottom:30px; padding: 5px; box-shadow:inset 0 1px 0 0 hsl(0deg 0% 100% / 40%); border:none; border-radius:3px; background-color: hsl(206,100%,52%); color: white;">질문하기</button>
-<button onclick="getPost()" style="font-size: 10px; margin-left:100px; margin-top:30px; margin-bottom:30px; padding: 5px; box-shadow:inset 0 1px 0 0 hsl(0deg 0% 100% / 40%); border:none; border-radius:3px; background-color: hsl(206,100%,52%); color: white;">질문 받기</button>
-
 
 
 
