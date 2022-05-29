@@ -319,36 +319,11 @@
             const editor = document.querySelector('#editing-code');
             editor.style.height = "20px";
             editor.style.height = (editor.scrollHeight + 5)+"px";
-            document.getElementById("undobutton").style.backgroundPosition = "-200px 0px"
         }
 
-        function insertCodeBlock(position){
-            var paper = document.getElementById("editing-code");
-            var result_elem = document.querySelector("#count1");
-            console.log(position);
-
-            var paper_childtext = paper.childNodes[0];
-
-            var result_childtext = result_elem.childNodes[0];
-            var codeblock = document.createElement("textarea");
-
-
-            codeblock.style.height = "20px";
-            codeblock.style.width = "300px";
-            codeblock.style.overflow = "none";
-            codeblock.style.resize = "none";
-
-
-            codeblock.oninput = function(){
-                auto_grow(this);
-            }
-            console.log(paper_childtext.length)
-            console.log(paper_childtext.splitText(position));
-            paper.insertBefore(codeblock, paper_childtext.splitText(position));
-
-        }
-
-        function insertAtCursor(myField, myValue) {
+        function insertAtCursor() {
+        var myField = document.getElementById("editing-code");
+        var myValue = '\n‛코드를 입력해 주세요!‛'
             if (document.selection) {
                 myField.focus();
                 sel = document.selection.createRange();
@@ -380,6 +355,7 @@
         }
 
         function opaCiTyNone(){
+            update_mycode()
             var result_elem = document.getElementById("count1");
             result_elem.style.display = "block";
         }
@@ -619,7 +595,7 @@
 </div>
 
 
-<pre class = "hljs" style="overflow-y: scroll; position: absolute; display: none; left: 1px; top: 70.5px; margin: 0; word-break: break-all; white-space: pre-wrap; height:390px; width:388px; background-color: white; color: black" id = "count1">
+<pre class = "hljs" style="overflow-y: scroll; position: absolute; display: none; top : 0px; margin: 0; word-break: break-all; white-space: pre-wrap; height:390px; width:388px; background-color: white; color: black" id = "count1">
     </pre>
 
 

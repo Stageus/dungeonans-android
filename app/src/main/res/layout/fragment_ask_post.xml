@@ -419,11 +419,11 @@
 
             <ImageButton
                 android:id="@+id/lanbutton_hyper"
-                android:layout_width="12dp"
-                android:layout_height="13dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="15dp"
-                android:background="@drawable/hiperlink_icon"/>
+                android:background="@drawable/hiperlink_icon" />
 
 
 

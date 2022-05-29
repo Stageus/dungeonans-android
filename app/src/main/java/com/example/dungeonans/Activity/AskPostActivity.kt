@@ -93,6 +93,7 @@ class AskPostActivity : AppCompatActivity() {
     var mWebViewImageUpload: ValueCallback<Array<Uri>>? = null
     var width: Float = 0.0f
     var islanBtnClicked = 0
+    var isPreViewBtnClicked = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -109,6 +110,36 @@ class AskPostActivity : AppCompatActivity() {
         var chartButton = findViewById<ImageButton>(R.id.mybutton_chart)
         var lanButton = findViewById<ImageButton>(R.id.mybutton_lan)
         var CodeButton = findViewById<ImageButton>(R.id.mybutton_code)
+        var h1Button = findViewById<ImageButton>(R.id.lanbutton_h1)
+        var fontButton = findViewById<ImageButton>(R.id.lanbutton_fontweight)
+        var boldButton = findViewById<ImageButton>(R.id.lanbutton_bold)
+        var nottButton = findViewById<ImageButton>(R.id.lanbutton_nott)
+        var uButton = findViewById<ImageButton>(R.id.lanbutton_u)
+        var senTenseButton = findViewById<ImageButton>(R.id.lanbutton_sentence)
+        var setOrderButton = findViewById<ImageButton>(R.id.lanbutton_senorder)
+        var aButton = findViewById<ImageButton>(R.id.lanbutton_A)
+        var hyperButton = findViewById<ImageButton>(R.id.lanbutton_hyper)
+
+
+        CodeButton.setOnClickListener(){
+            body_webview.loadUrl("javascript:insertAtCursor()")
+        }
+        chartButton.setOnClickListener(){
+            if (isPreViewBtnClicked == 0){
+                lanButton.setBackgroundResource(R.drawable.aboutlan_clicked_icon)
+                body_webview.loadUrl("javascript:opaCiTyNone()")
+                isPreViewBtnClicked = 1
+            }
+            else if (isPreViewBtnClicked == 1){
+                lanButton.setBackgroundResource(R.drawable.aboutlan_icon)
+                body_webview.loadUrl("javascript:opaCiTyOn()")
+                isPreViewBtnClicked = 0
+            }
+
+        }
+        boldButton.setOnClickListener(){
+            body_webview.loadUrl("javascript:changeBoldStyle()")
+        }
 
         lanButton.setOnClickListener(){
             if (islanBtnClicked == 0){
